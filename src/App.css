@@ -1,0 +1,392 @@
+.site-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-nav .logo {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.site-nav nav {
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.site-nav a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.site-nav a.active {
+  color: #f97316;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.home,
+.iss-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero {
+  padding: 2.5rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(63, 99, 255, 0.35), rgba(13, 17, 40, 0.9));
+  border: 1px solid rgba(99, 122, 255, 0.4);
+  box-shadow: 0 30px 80px rgba(8, 10, 18, 0.65);
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.lead {
+  max-width: 720px;
+  color: rgba(246, 249, 255, 0.82);
+  margin-bottom: 1.75rem;
+  font-size: 1.1rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f97316;
+  color: #05060d;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(249, 115, 22, 0.35);
+}
+
+.tag {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.projects,
+.telemetry-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-header h2 {
+  margin: 0.2rem 0 0;
+  font-size: 1.8rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card,
+.telemetry-card {
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(13, 16, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.project-card.disabled {
+  opacity: 0.6;
+}
+
+.text-link {
+  color: #f97316;
+}
+
+.connection-status {
+  padding: 1.8rem 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.connection-status h2 {
+  margin: 0.35rem 0;
+}
+
+.connection-status .muted {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.connection-status__meta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.connection-status--ok {
+  background: rgba(34, 197, 94, 0.07);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.connection-status--warn {
+  background: rgba(252, 211, 77, 0.08);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.connection-status--error {
+  background: rgba(248, 113, 113, 0.08);
+  border-color: rgba(248, 113, 113, 0.4);
+}
+
+.connection-status .error {
+  color: #fecaca;
+}
+
+.telemetry-card__value {
+  display: flex;
+  flex-direction: column;
+}
+
+.value-primary {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.value-secondary {
+  margin: 0.25rem 0 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+}
+
+.telemetry-card__body h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.telemetry-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.telemetry-card__extra {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.extra-note-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.restroom-chart {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.restroom-chart__bar {
+  position: relative;
+  background: linear-gradient(180deg, rgba(249, 115, 22, 0.85), rgba(249, 115, 22, 0.2));
+  border-radius: 8px 8px 0 0;
+  padding-top: 1.5rem;
+  text-align: center;
+  color: #05060d;
+  font-weight: 600;
+}
+
+.restroom-chart__bar span {
+  display: block;
+}
+
+.restroom-chart__value {
+  font-size: 0.85rem;
+  color: rgba(5, 6, 13, 0.85);
+}
+
+.restroom-chart__time {
+  font-size: 0.7rem;
+  color: rgba(5, 6, 13, 0.65);
+}
+
+.footnote {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.telemetry-card--nominal {
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+.telemetry-card--warning {
+  border-color: rgba(251, 191, 36, 0.5);
+}
+
+.telemetry-card--critical {
+  border-color: rgba(248, 113, 113, 0.6);
+  box-shadow: 0 0 20px rgba(248, 113, 113, 0.25);
+}
+
+.meta {
+  padding: 1.8rem 2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 10, 18, 0.85);
+}
+
+.meta h3 {
+  margin-top: 0;
+}
+
+.meta p {
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.iss-map {
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(8, 10, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+}
+
+.map-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.map-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.distance {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.map-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 360px;
+}
+
+.map-wrapper .leaflet-container {
+  width: 100%;
+  height: 360px;
+}
+
+.map-placeholder {
+  height: 360px;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.error-text {
+  color: #fecaca;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.extra-note {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .hero,
+  .connection-status,
+  .iss-map,
+  .meta {
+    padding: 1.5rem;
+  }
+
+  .connection-status__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
