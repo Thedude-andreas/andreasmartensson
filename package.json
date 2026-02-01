@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "set -a; [ -f .env ] && . ./.env; set +a; npm run build && lftp -e \"set sftp:auto-confirm yes; open -u $DEPLOY_USER,$DEPLOY_PASS sftp://$DEPLOY_HOST:$DEPLOY_PORT; mirror -R --delete --verbose --exclude-glob api/storage/* dist $DEPLOY_PATH; bye\""
   },
   "dependencies": {
     "leaflet": "^1.9.4",

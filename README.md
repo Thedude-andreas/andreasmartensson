@@ -19,6 +19,7 @@ React Router står för sidbytena så hela lösningen fortsätter vara en statis
 - **Routing**: `react-router-dom` för startsida + undersida.
 - **Data**: `lightstreamer-client-web` (ESM) + `react-leaflet`/Leaflet för kartan.
 - **Delad uthållig status**: ett lätt PHP-API (`public/api/last-urine.php`) som med fil-låsning läser/skrivertidsstämpeln i `public/api/storage/last-urine.json`, vilket delar läget mellan alla klienter.
+- **Server-side insamling**: `public/api/collect-urine.php` kan köras schemalagt för att logga ökningar även när ingen klient är öppen.
 - **Bygg**: `npm run build` ger statiska filer i `dist/`.
 
 ## Kom igång lokalt
@@ -37,11 +38,24 @@ Vite proxar `/api/*` till `http://127.0.0.1:8787` automatiskt. Behövs annan adr
 
 ## Bygg & driftsätt på one.com
 1. **Bygg**: `npm run build`.
-2. **API**: ladda upp `public/api/` (inklusive `storage/`) till motsvarande plats under `public_html`. Säkerställ att webbservern har skrivbehörighet: exempel `chmod 775 public_html/api/storage && chmod 664 public_html/api/storage/last-urine.json`.
-3. **Rewrite-regler**: `public/.htaccess` ser till att Apache/one.com skickar alla okända paths (t.ex. `/iss`) till `index.html`. Ladda upp filen till roten av `public_html` tillsammans med byggartefakterna.
-4. **SPA**: ladda upp hela `dist/`-innehållet till `public_html`.
+2. **API**: ladda upp `public/api/` (inklusive `storage/`) till motsvarande plats under webbroten. Säkerställ att webbservern har skrivbehörighet: exempel `chmod 775 api/storage && chmod 664 api/storage/last-urine.json`.
+3. **Rewrite-regler**: `public/.htaccess` ser till att Apache/one.com skickar alla okända paths (t.ex. `/iss`) till `index.html`. Ladda upp filen till webbroten tillsammans med byggartefakterna.
+4. **SPA**: ladda upp hela `dist/`-innehållet till webbroten.
 5. **Miljövariabler**: i produktion behöver `VITE_API_BASE_URL` inte sättas om API:t ligger på samma domän. För alternativ domän anger du `VITE_API_BASE_URL=https://exempel.com` inför build.
 6. **Cache**: aktivera valfri CDN eller cache efter behov – allt är statiskt förutom `/api/last-urine.php`.
+7. **Schemaläggning**: lägg in en cron som kör `collect-urine.php` (t.ex. varje minut) så historiken fylls även när ingen webbläsare är aktiv.
+
+Exempel på cron (körs varje minut):
+```bash
+* * * * * /usr/bin/php /path/to/public/api/collect-urine.php >/dev/null 2>&1
+```
+
+## Deploy-script (FTP/SFTP)
+Fyll i `.env` (se `.env.example`) och kör:
+```bash
+npm run deploy
+```
+Scriptet bygger projektet och synkar `dist/` till `public_html` via SFTP.
 
 > Obs! Paketet `lightstreamer-client-web` och Leaflet gör att den bundlade JS-filen blir >700 kB. Detta är accepterat med tanke på realtidsbiblioteket, men går att koda-splitta vid behov (se Vite-varningen efter build).
 

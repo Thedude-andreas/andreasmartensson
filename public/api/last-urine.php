@@ -71,6 +71,7 @@ function readSnapshot(string $file): array
     $decoded = json_decode($contents, true);
     $timestamp = 0;
     $history = [];
+    $lastValue = null;
     if (is_array($decoded)) {
         if (isset($decoded['timestamp']) && is_numeric($decoded['timestamp'])) {
             $timestamp = max(0, (int) $decoded['timestamp']);
@@ -78,10 +79,14 @@ function readSnapshot(string $file): array
         if (isset($decoded['history']) && is_array($decoded['history'])) {
             $history = sanitizeHistory($decoded['history'], currentTimeMillis());
         }
+        if (isset($decoded['lastValue']) && is_numeric($decoded['lastValue'])) {
+            $lastValue = (float) $decoded['lastValue'];
+        }
     }
     return [
         'timestamp' => $timestamp,
         'history' => $history,
+        'lastValue' => $lastValue,
     ];
 }
 
@@ -103,6 +108,7 @@ function persistSnapshot(string $file, int $incoming, ?float $delta): array
         $decoded = json_decode($contents, true);
         $existingTimestamp = 0;
         $history = [];
+        $lastValue = null;
         $now = currentTimeMillis();
 
         if (is_array($decoded)) {
@@ -111,6 +117,9 @@ function persistSnapshot(string $file, int $incoming, ?float $delta): array
             }
             if (isset($decoded['history']) && is_array($decoded['history'])) {
                 $history = sanitizeHistory($decoded['history'], $now);
+            }
+            if (isset($decoded['lastValue']) && is_numeric($decoded['lastValue'])) {
+                $lastValue = (float) $decoded['lastValue'];
             }
         }
 
@@ -126,6 +135,7 @@ function persistSnapshot(string $file, int $incoming, ?float $delta): array
         $payloadArray = [
             'timestamp' => $nextTimestamp,
             'history' => array_values($history),
+            'lastValue' => $lastValue,
         ];
         $payload = json_encode($payloadArray);
         if ($payload === false) {
@@ -151,7 +161,7 @@ function persistSnapshot(string $file, int $incoming, ?float $delta): array
 
 function initializeStorageFile(string $file): void
 {
-    $default = json_encode(['timestamp' => 0, 'history' => []]);
+    $default = json_encode(['timestamp' => 0, 'history' => [], 'lastValue' => null]);
     if ($default === false || file_put_contents($file, $default, LOCK_EX) === false) {
         respondError(500, 'Unable to initialize storage file.');
     }
