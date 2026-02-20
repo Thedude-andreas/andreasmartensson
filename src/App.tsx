@@ -16,6 +16,9 @@ function App() {
               Home
             </NavLink>
             <NavLink to="/iss">ISS Dashboard</NavLink>
+            <a href="https://tempsense.andreasmartensson.com" target="_blank" rel="noreferrer">
+              TempSense
+            </a>
           </nav>
         </header>
         <main>

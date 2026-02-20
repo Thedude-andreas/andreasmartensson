@@ -22,6 +22,19 @@ export function IssMap() {
   const markerCoords: [number, number] | undefined = hasPosition
     ? [positionState.latitude, positionState.longitude]
     : undefined
+  const formatNavValue = (
+    value: number | null,
+    unit: string,
+    source: 'api' | 'derived' | 'unknown',
+    decimals = 1,
+    showDerivedTag = true
+  ) => {
+    if (value == null || Number.isNaN(value)) {
+      return '—'
+    }
+    const suffix = showDerivedTag && source === 'derived' ? ' · est.' : ''
+    return `${formatNumber(value, decimals)} ${unit}${suffix}`
+  }
 
   return (
     <section className="iss-map">
@@ -36,6 +49,26 @@ export function IssMap() {
           <p className="distance">Fetching orbital data…</p>
         )}
         {positionState.error && <p className="error-text">{positionState.error}</p>}
+      </div>
+      <div className="map-nav">
+        <div className="map-nav__item">
+          <span className="map-nav__label">Altitude</span>
+          <span className="map-nav__value">
+            {formatNavValue(positionState.altitude, 'km', positionState.altitudeSource, 1)}
+          </span>
+        </div>
+        <div className="map-nav__item">
+          <span className="map-nav__label">Derived track</span>
+          <span className="map-nav__value">
+            {formatNavValue(positionState.heading, '°', positionState.headingSource, 0, false)}
+          </span>
+        </div>
+        <div className="map-nav__item">
+          <span className="map-nav__label">Groundspeed</span>
+          <span className="map-nav__value">
+            {formatNavValue(positionState.groundspeed, 'km/h', positionState.groundspeedSource, 0)}
+          </span>
+        </div>
       </div>
       <div className="map-wrapper">
         {markerCoords ? (

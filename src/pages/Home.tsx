@@ -28,6 +28,18 @@ export function Home() {
               Visit dashboard →
             </Link>
           </article>
+          <article className="project-card">
+            <h3>TempSense</h3>
+            <p>Production dashboard for temperature, humidity and pressure sensors with secure ingest API.</p>
+            <a
+              href="https://tempsense.andreasmartensson.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-link"
+            >
+              Open TempSense →
+            </a>
+          </article>
           <article className="project-card disabled">
             <h3>Resting ideas</h3>
             <p>Shelves reserved for future prototypes whenever inspiration and espresso align.</p>

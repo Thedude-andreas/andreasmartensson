@@ -251,34 +251,142 @@ main {
 }
 
 .restroom-chart {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  gap: 0.5rem;
-  align-items: end;
+  position: relative;
+  height: 90px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(6, 8, 18, 0.7);
+  overflow: hidden;
+  cursor: pointer;
+  transition: height 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+}
+
+.restroom-chart:focus-visible {
+  outline: 2px solid rgba(251, 191, 36, 0.8);
+  outline-offset: 2px;
+}
+
+.restroom-chart--expanded {
+  height: 240px;
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+}
+
+.restroom-chart--fullscreen .restroom-chart--expanded {
+  position: fixed;
+  inset: 24px;
+  z-index: 1000;
+  height: auto;
+  width: auto;
+  max-height: none;
+  border-radius: 24px;
+  background: rgba(6, 8, 18, 0.95);
+}
+
+.restroom-chart--fullscreen .restroom-chart--expanded::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 12, 0.7);
+  z-index: -1;
+}
+
+.restroom-chart--fullscreen {
+  overflow: hidden;
+}
+
+.restroom-chart--expanded .restroom-chart__track {
+  bottom: 28px;
+}
+
+.restroom-chart--expanded .restroom-chart__bar {
+  bottom: 28px;
+}
+
+.restroom-chart__track {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.restroom-chart__axis {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.restroom-chart__axis--y {
+  left: 38px;
+  top: 16px;
+  bottom: 28px;
+  width: 1px;
+}
+
+.restroom-chart__axis--x {
+  left: 38px;
+  right: 18px;
+  bottom: 28px;
+  height: 1px;
+}
+
+.restroom-chart__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 20, 40, 0.9);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.restroom-chart__x-label,
+.restroom-chart__y-label {
+  position: absolute;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.02em;
+}
+
+.restroom-chart__x-label--now {
+  right: 12px;
+  bottom: 8px;
+}
+
+.restroom-chart__x-label--mid {
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+}
+
+.restroom-chart__x-label--day {
+  left: 28px;
+  bottom: 8px;
+}
+
+.restroom-chart__y-label {
+  left: 8px;
+  transform: translateY(50%);
 }
 
 .restroom-chart__bar {
-  position: relative;
-  background: linear-gradient(180deg, rgba(249, 115, 22, 0.85), rgba(249, 115, 22, 0.2));
-  border-radius: 8px 8px 0 0;
-  padding-top: 1.5rem;
-  text-align: center;
-  color: #05060d;
-  font-weight: 600;
-}
-
-.restroom-chart__bar span {
-  display: block;
-}
-
-.restroom-chart__value {
-  font-size: 0.85rem;
-  color: rgba(5, 6, 13, 0.85);
-}
-
-.restroom-chart__time {
-  font-size: 0.7rem;
-  color: rgba(5, 6, 13, 0.65);
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(249, 115, 22, 0.9), rgba(249, 115, 22, 0.3));
+  border-radius: 2px 2px 0 0;
 }
 
 .footnote {
@@ -340,6 +448,36 @@ main {
   margin: 0;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.75);
+}
+
+.map-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+
+.map-nav__item {
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 14, 28, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.map-nav__label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.map-nav__value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .map-wrapper {
