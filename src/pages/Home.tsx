@@ -11,6 +11,9 @@ export function Home() {
           <Link to="/iss" className="button">
             Open the ISS dashboard
           </Link>
+          <a href="/vibe/AMC/" className="button">
+            Open AMC Download Manager
+          </a>
           <span className="tag">No roadmaps. Just tinkering.</span>
         </div>
       </section>
@@ -38,6 +41,13 @@ export function Home() {
               className="text-link"
             >
               Open TempSense →
+            </a>
+          </article>
+          <article className="project-card">
+            <h3>AMC Download Manager</h3>
+            <p>Android app for fast access to recent files in Downloads, built for one-tap document reopening.</p>
+            <a href="/vibe/AMC/" className="text-link">
+              Open project page →
             </a>
           </article>
           <article className="project-card disabled">

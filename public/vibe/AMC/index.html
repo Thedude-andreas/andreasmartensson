@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMC Download Manager – Android</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --card: #121936;
+        --muted: #b6c3e5;
+        --text: #ecf1ff;
+        --accent: #1f7ae0;
+        --accent-2: #0f4f9f;
+        --line: rgba(255, 255, 255, 0.14);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: radial-gradient(circle at top right, #1b2d5c 0%, var(--bg) 46%);
+        color: var(--text);
+      }
+      .wrap {
+        width: min(920px, 100% - 2rem);
+        margin: 2rem auto 3rem;
+      }
+      .hero, .panel {
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 1.25rem;
+      }
+      .hero h1 { margin: 0.35rem 0 0.75rem; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+      .eyebrow { margin: 0; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem; }
+      .lead { margin: 0; color: var(--muted); max-width: 70ch; line-height: 1.55; }
+      .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+      .panel h2 { margin: 0 0 0.8rem; font-size: 1.2rem; }
+      ul { margin: 0; padding-left: 1rem; color: var(--muted); line-height: 1.7; }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        min-height: 48px;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .btn.primary {
+        background: linear-gradient(180deg, var(--accent), var(--accent-2));
+        border-color: rgba(255,255,255,0.22);
+      }
+      .btn.secondary {
+        background: rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.2);
+      }
+      .meta { margin-top: 1rem; color: var(--muted); font-size: 0.93rem; }
+      .back { margin-top: 1.25rem; }
+      .back a { color: #9fd0ff; }
+      @media (min-width: 760px) {
+        .grid { grid-template-columns: 1fr 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="hero">
+        <p class="eyebrow">andreasmartensson.com / vibe / AMC</p>
+        <h1>AMC Download Manager (Android)</h1>
+        <p class="lead">
+          En enkel, snabb och tumvänlig Android-app för att hitta och öppna filer i nedladdningsmappen utan att behöva ladda ner samma dokument flera gånger.
+        </p>
+      </section>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Syfte</h2>
+          <ul>
+            <li>Öppna senast nedladdade filen direkt med ett tryck.</li>
+            <li>Slippa leta i Androids filsystem när du redan laddat ner dokumentet.</li>
+            <li>Ge en mycket enkel vy för vardagsfiler: cup-schema, PDF:er, biljetter, bilder.</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Funktioner</h2>
+          <ul>
+            <li>Startar direkt i <strong>Downloads</strong>.</li>
+            <li>Filer sorteras kronologiskt med senaste överst.</li>
+            <li>Tryck på fil för att öppna i standardapp.</li>
+            <li>Stor knapp för <strong>"Öppna senaste"</strong> för snabb åtkomst med tummen.</li>
+            <li>UI respekterar systembaren (klocka/notiser).</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="panel" style="margin-top: 1rem;">
+        <h2>Nedladdning</h2>
+        <div class="actions">
+          <a class="btn primary" href="./DownloadFileManager-release.apk">Ladda ner APK (signerad release)</a>
+          <a class="btn secondary" href="./DownloadFileManager-project-v2.zip">Ladda ner källkod (zip)</a>
+        </div>
+        <p class="meta">
+          APK-filen är en signerad release-build för installation på Android. Källkods-zipen innehåller hela Android Studio-projektet.
+        </p>
+        <p class="back"><a href="/">← Till startsidan</a></p>
+      </section>
+    </div>
+  </body>
+</html>
