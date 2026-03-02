@@ -5,7 +5,7 @@ En skräddarsydd React/Vite-app som visualiserar utvalda telemetri-signaler frå
 ## Informationsarkitektur
 - **/** – Landningssida för andreasmartensson.com med beskrivning, projektkort och CTA till aktuella/kommande builds.
 - **/iss** – ISS-dashboarden med karta, telemetritabbar och statusindikatorer.
-- **/vibe/AMC/** – statisk projektsida för AMC Download Manager (Android) med nedladdning av signerad release-APK och källkods-zip.
+- **/AMCDM/** – statisk projektsida för AMC Download Manager (Android) med nedladdning av signerad release-APK och källkods-zip.
 
 React Router står för sidbytena så hela lösningen fortsätter vara en statisk SPA som kan publiceras på one.com.
 
@@ -45,7 +45,7 @@ Vite proxar `/api/*` till `http://127.0.0.1:8787` automatiskt. Behövs annan adr
 5. **Miljövariabler**: i produktion behöver `VITE_API_BASE_URL` inte sättas om API:t ligger på samma domän. För alternativ domän anger du `VITE_API_BASE_URL=https://exempel.com` inför build.
 6. **Cache**: aktivera valfri CDN eller cache efter behov – allt är statiskt förutom `/api/last-urine.php`.
 7. **Schemaläggning**: lägg in en cron som kör `collect-urine.php` (t.ex. varje minut) så historiken fylls även när ingen webbläsare är aktiv.
-8. **AMC Download Manager-sida**: statiska filer för Android-projektet ligger i `public/vibe/AMC/` och följer med till `dist/vibe/AMC/` vid `npm run build`.
+8. **AMC Download Manager-sida**: statiska filer för Android-projektet ligger i `public/AMCDM/` och följer med till `dist/AMCDM/` vid `npm run build`.
 
 Exempel på cron (körs varje minut):
 ```bash
@@ -78,7 +78,7 @@ src/
 ```
 public/
  ├─ api/                   – PHP-endpoints + lagring för ISS-toalettdata
- └─ vibe/AMC/              – statisk projektsida + APK/zip för AMC Download Manager
+ └─ AMCDM/                 – statisk projektsida + APK/zip för AMC Download Manager
 ```
 
 ## Vidareutveckling
