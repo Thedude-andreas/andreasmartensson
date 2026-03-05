@@ -100,38 +100,52 @@
         <p class="eyebrow">andreasmartensson.com / SlopeTrace</p>
         <h1>SlopeTrace (Android)</h1>
         <p class="lead">
-          App for alpina skidpass med 3D-spår utan kartbakgrund. Sessioner samlar flera åkare, och appen detekterar lift- och downhill-event med statistik per händelse.
+          Android app for alpine ski sessions with sensor fusion, 3D tracks without map tiles, and event-based stats.
+          Multiple riders can share the same session in real time with Supabase as the backend.
         </p>
       </section>
 
       <div class="grid">
         <section class="panel">
-          <h2>Syfte</h2>
+          <h2>Documentation: Overview</h2>
           <ul>
-            <li>Registrera skiddata per dagssession och visa alla användares spår i 3D.</li>
-            <li>Dela upp rörelse i lift/downhill med regler baserat på fart och hojdprofil.</li>
-            <li>Bygga ett datalager av riktiga sensordata for fortsatt trimning av algoritmer.</li>
+            <li>Create or join sessions, and explicitly start/stop tracking.</li>
+            <li>Collect GPS, barometer, and accelerometer data with fused altitude and smoothed speed.</li>
+            <li>Automatic segment classification: LIFT, DOWNHILL, and UNKNOWN.</li>
+            <li>3D rendering of multi-user tracks with rotatable camera and pinch zoom.</li>
           </ul>
         </section>
 
         <section class="panel">
-          <h2>Funktioner</h2>
+          <h2>Documentation: Key Features</h2>
           <ul>
-            <li>Start/stop tracking med varning om man startar langt fran tidigare sessionspunkter.</li>
-            <li>Bakgrundsspårning via foreground service.</li>
-            <li>Liftklustring: liknande liftstrackor grupperas till samma fysiska lift.</li>
-            <li>Detaljerad statsvy for session, liftar och downhill-event.</li>
+            <li>Z-gate reduces false-positive classification:
+              LIFT is confirmed after +10 m and DOWNHILL after -10 m (the first 10 m is backfilled on confirmation).</li>
+            <li>Background tracking via foreground service.</li>
+            <li>Lift clustering: similar lift traces are grouped into the same physical lift, with editable names.</li>
+            <li>Session and event (run/lift) stats: time, speed, angle, airtime, and vertical drop.</li>
+            <li>Point-history export to JSON when leaving a session for continued analysis/tuning.</li>
           </ul>
         </section>
       </div>
 
       <section class="panel" style="margin-top: 1rem;">
-        <h2>Nedladdning</h2>
+        <h2>Technical Stack</h2>
+        <ul>
+          <li>Kotlin + Jetpack Compose + OpenGL ES rendering.</li>
+          <li>Room local datastore.</li>
+          <li>Supabase for auth, realtime, and session sync.</li>
+        </ul>
+      </section>
+
+      <section class="panel" style="margin-top: 1rem;">
+        <h2>Download</h2>
         <div class="actions">
-          <a class="btn primary" href="./SlopeTrace-debug-package.zip">Ladda ner APK-paket (zip)</a>
+          <a class="btn primary" href="./SlopeTrace-debug-package.zip">Download APK package (zip)</a>
         </div>
-        <p class="meta">APK-paketet innehaller debug-build (SlopeTrace-debug.apk) for snabb testning.</p>
-        <p class="back"><a href="/">← Till startsidan</a></p>
+        <p class="meta">The APK package contains a debug build (SlopeTrace-debug.apk) for quick testing.</p>
+        <p class="meta">Data export is written to: Android/data/com.slopetrace/files/Documents/session_exports/</p>
+        <p class="back"><a href="/">← Back to home</a></p>
       </section>
     </div>
   </body>
