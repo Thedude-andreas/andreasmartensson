@@ -24,8 +24,11 @@
 
 .site-nav nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+  row-gap: 0.5rem;
   font-weight: 500;
+  justify-content: flex-end;
 }
 
 .site-nav a {
@@ -96,11 +99,14 @@ main {
 .button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: #f97316;
-  color: #05060d;
-  padding: 0.85rem 1.6rem;
-  border-radius: 999px;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(180deg, #f97316, #e35d0a);
+  color: #fff;
+  text-decoration: none;
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

@@ -7,18 +7,7 @@ export function Home() {
         <p className="eyebrow">andreasmartensson.com</p>
         <h1>Where obscure projects go to die (or occasionally launch).</h1>
         <p className="lead">A tidy landing page for experiments I build after work, nothing more and nothing less.</p>
-        <div className="hero-actions">
-          <Link to="/iss" className="button">
-            Open the ISS dashboard
-          </Link>
-          <a href="/AMCDM/" className="button">
-            Open AMC Download Manager
-          </a>
-          <a href="/SlopeTrace/" className="button">
-            Open SlopeTrace
-          </a>
-          <span className="tag">No roadmaps. Just tinkering.</span>
-        </div>
+        <span className="tag">No roadmaps. Just tinkering.</span>
       </section>
 
       <section className="projects">

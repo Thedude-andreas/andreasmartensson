@@ -21,6 +21,39 @@
         background: radial-gradient(circle at top right, #1b2d5c 0%, var(--bg) 46%);
         color: var(--text);
       }
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 1.5rem;
+      }
+      .site-nav {
+        width: min(920px, 100% - 2rem);
+        margin: 0 auto;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+      .logo {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .site-nav nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.8rem;
+      }
+      .site-nav nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .site-nav nav a.active {
+        color: var(--accent);
+      }
       .wrap { width: min(920px, 100% - 2rem); margin: 2rem auto 3rem; }
       .hero, .panel {
         background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
@@ -46,9 +79,22 @@
       .back { margin-top: 1.25rem; }
       .back a { color: #9fd0ff; }
       @media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 760px) {
+        .site-nav { flex-direction: column; align-items: flex-start; }
+      }
     </style>
   </head>
   <body>
+    <header class="site-header">
+      <div class="site-nav">
+        <a class="logo" href="/">andreasmartensson.com</a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/iss">ISS Dashboard</a>
+          <a href="https://tempsense.andreasmartensson.com" target="_blank" rel="noreferrer">Tempsense</a>
+        </nav>
+      </div>
+    </header>
     <div class="wrap">
       <section class="hero">
         <p class="eyebrow">andreasmartensson.com / AMCDM</p>
@@ -83,9 +129,8 @@
         <h2>Nedladdning</h2>
         <div class="actions">
           <a class="btn primary" href="./AMCDM-release-package.zip">Ladda ner APK-paket (zip)</a>
-          <a class="btn secondary" href="./AMCDM-project-v4.zip">Ladda ner källkod (zip)</a>
         </div>
-        <p class="meta">ZIP-paketet innehåller signerad release-APK (AMCDM-release.apk). Zip-filen innehåller Android Studio-projektet.</p>
+        <p class="meta">ZIP-paketet innehåller signerad release-APK (AMCDM-release.apk).</p>
         <p class="back"><a href="/">← Till startsidan</a></p>
       </section>
     </div>

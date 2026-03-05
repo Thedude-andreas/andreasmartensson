@@ -5,7 +5,8 @@ En skräddarsydd React/Vite-app som visualiserar utvalda telemetri-signaler frå
 ## Informationsarkitektur
 - **/** – Landningssida för andreasmartensson.com med beskrivning, projektkort och CTA till aktuella/kommande builds.
 - **/iss** – ISS-dashboarden med karta, telemetritabbar och statusindikatorer.
-- **/AMCDM/** – statisk projektsida för AMC Download Manager (Android) med nedladdning av signerad release-APK och källkods-zip.
+- **/AMCDM/** – statisk projektsida för AMC Download Manager (Android) med nedladdning av signerad release-APK.
+- **/SlopeTrace/** – statisk projektsida för SlopeTrace (Android) med nedladdning av APK-paket.
 
 React Router står för sidbytena så hela lösningen fortsätter vara en statisk SPA som kan publiceras på one.com.
 
