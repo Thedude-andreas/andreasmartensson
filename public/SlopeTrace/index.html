@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SlopeTrace - Android</title>
+    <style>
+      :root {
+        --bg: #09111d;
+        --card: #112036;
+        --muted: #b8c7dc;
+        --text: #eef5ff;
+        --accent: #0ea5e9;
+        --accent-2: #0284c7;
+        --line: rgba(255, 255, 255, 0.14);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: radial-gradient(circle at top right, #15345d 0%, var(--bg) 46%);
+        color: var(--text);
+      }
+      .wrap { width: min(920px, 100% - 2rem); margin: 2rem auto 3rem; }
+      .hero, .panel {
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 1.25rem;
+      }
+      .hero h1 { margin: 0.35rem 0 0.75rem; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+      .eyebrow { margin: 0; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem; }
+      .lead { margin: 0; color: var(--muted); max-width: 70ch; line-height: 1.55; }
+      .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+      .panel h2 { margin: 0 0 0.8rem; font-size: 1.2rem; }
+      ul { margin: 0; padding-left: 1rem; color: var(--muted); line-height: 1.7; }
+      .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+        padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid transparent;
+        color: #fff; text-decoration: none; font-weight: 600;
+      }
+      .btn.primary { background: linear-gradient(180deg, var(--accent), var(--accent-2)); border-color: rgba(255,255,255,0.22); }
+      .btn.secondary { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
+      .meta { margin-top: 1rem; color: var(--muted); font-size: 0.93rem; }
+      .back { margin-top: 1.25rem; }
+      .back a { color: #9fd0ff; }
+      @media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="hero">
+        <p class="eyebrow">andreasmartensson.com / SlopeTrace</p>
+        <h1>SlopeTrace (Android)</h1>
+        <p class="lead">
+          App for alpina skidpass med 3D-spår utan kartbakgrund. Sessioner samlar flera åkare, och appen detekterar lift- och downhill-event med statistik per händelse.
+        </p>
+      </section>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Syfte</h2>
+          <ul>
+            <li>Registrera skiddata per dagssession och visa alla användares spår i 3D.</li>
+            <li>Dela upp rörelse i lift/downhill med regler baserat på fart och hojdprofil.</li>
+            <li>Bygga ett datalager av riktiga sensordata for fortsatt trimning av algoritmer.</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Funktioner</h2>
+          <ul>
+            <li>Start/stop tracking med varning om man startar langt fran tidigare sessionspunkter.</li>
+            <li>Bakgrundsspårning via foreground service.</li>
+            <li>Liftklustring: liknande liftstrackor grupperas till samma fysiska lift.</li>
+            <li>Detaljerad statsvy for session, liftar och downhill-event.</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="panel" style="margin-top: 1rem;">
+        <h2>Nedladdning</h2>
+        <div class="actions">
+          <a class="btn primary" href="./SlopeTrace-debug-package.zip">Ladda ner APK-paket (zip)</a>
+          <a class="btn secondary" href="./SlopeTrace-project.zip">Ladda ner källkod (zip)</a>
+        </div>
+        <p class="meta">APK-paketet innehaller debug-build (SlopeTrace-debug.apk) for snabb testning. Kallkods-zip innehaller senaste commit av Android Studio-projektet.</p>
+        <p class="back"><a href="/">← Till startsidan</a></p>
+      </section>
+    </div>
+  </body>
+</html>

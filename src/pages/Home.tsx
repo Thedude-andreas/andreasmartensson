@@ -14,6 +14,9 @@ export function Home() {
           <a href="/AMCDM/" className="button">
             Open AMC Download Manager
           </a>
+          <a href="/SlopeTrace/" className="button">
+            Open SlopeTrace
+          </a>
           <span className="tag">No roadmaps. Just tinkering.</span>
         </div>
       </section>
@@ -47,6 +50,13 @@ export function Home() {
             <h3>AMC Download Manager</h3>
             <p>Android app for fast access to recent files in Downloads, built for one-tap document reopening.</p>
             <a href="/AMCDM/" className="text-link">
+              Open project page →
+            </a>
+          </article>
+          <article className="project-card">
+            <h3>SlopeTrace</h3>
+            <p>Android app for alpine skiing sessions with 3D track lines, lift/downhill detection, and event-based stats.</p>
+            <a href="/SlopeTrace/" className="text-link">
               Open project page →
             </a>
           </article>
