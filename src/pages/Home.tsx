@@ -31,6 +31,13 @@ export function Home() {
             </a>
           </article>
           <article className="project-card">
+            <h3>Bosse Hoppar</h3>
+            <p>Mobile-friendly endless runner that flips into a scrolling maze where Bosse chases carrots and dodges elephants.</p>
+            <a href="https://github.com/Thedude-andreas/bosse-hoppar" className="text-link" target="_blank" rel="noreferrer">
+              Open repository →
+            </a>
+          </article>
+          <article className="project-card">
             <h3>TempSense</h3>
             <p>Production dashboard for temperature, humidity and pressure sensors with secure ingest API.</p>
             <a
