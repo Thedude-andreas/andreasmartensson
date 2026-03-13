@@ -24,6 +24,13 @@ export function Home() {
             </Link>
           </article>
           <article className="project-card">
+            <h3>Flightplan</h3>
+            <p>Printable flight planning tool for general aviation with route, fuel, STOL and weight-and-balance calculations.</p>
+            <a href="https://github.com/Thedude-andreas/flightplan" className="text-link" target="_blank" rel="noreferrer">
+              Open repository →
+            </a>
+          </article>
+          <article className="project-card">
             <h3>TempSense</h3>
             <p>Production dashboard for temperature, humidity and pressure sensors with secure ingest API.</p>
             <a
