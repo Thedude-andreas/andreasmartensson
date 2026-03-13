@@ -26,15 +26,15 @@ export function Home() {
           <article className="project-card">
             <h3>Flightplan</h3>
             <p>Printable flight planning tool for general aviation with route, fuel, STOL and weight-and-balance calculations.</p>
-            <a href="https://github.com/Thedude-andreas/flightplan" className="text-link" target="_blank" rel="noreferrer">
-              Open repository →
+            <a href="https://andreasmartensson.com/flightplan/" className="text-link" target="_blank" rel="noreferrer">
+              Open project →
             </a>
           </article>
           <article className="project-card">
             <h3>Bosse Hoppar</h3>
             <p>Mobile-friendly endless runner that flips into a scrolling maze where Bosse chases carrots and dodges elephants.</p>
-            <a href="https://github.com/Thedude-andreas/bosse-hoppar" className="text-link" target="_blank" rel="noreferrer">
-              Open repository →
+            <a href="https://andreasmartensson.com/bosse-hoppar/" className="text-link" target="_blank" rel="noreferrer">
+              Open project →
             </a>
           </article>
           <article className="project-card">
