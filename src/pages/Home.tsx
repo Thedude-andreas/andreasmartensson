@@ -31,8 +31,8 @@ export function Home() {
             </a>
           </article>
           <article className="project-card">
-            <h3>Bosse Hoppar</h3>
-            <p>Mobile-friendly endless runner that flips into a scrolling maze where Bosse chases carrots and dodges elephants.</p>
+            <h3>Majkens spelhala</h3>
+            <p>Two separate Bosse games in one portal: Bosse Hoppar and Bosse Vimsar, with a game picker on the first screen.</p>
             <a href="https://andreasmartensson.com/bosse-hoppar/" className="text-link" target="_blank" rel="noreferrer">
               Open project →
             </a>
