@@ -109,7 +109,7 @@ set xfer:clobber yes
 open -u "$DEPLOY_USER","$DEPLOY_PASS" "sftp://$DEPLOY_HOST:$DEPLOY_PORT"
 cd "$DEPLOY_PATH"
 lcd "$ROOT_DIR"
-mkdir -p assets
+mkdir assets
 mirror -R --delete --verbose --scan-all-first public/AMCDM AMCDM
 mirror -R --delete --verbose --scan-all-first public/SlopeTrace SlopeTrace
 mirror -R --delete --verbose --scan-all-first --exclude-glob storage --exclude-glob storage/* public/api api
