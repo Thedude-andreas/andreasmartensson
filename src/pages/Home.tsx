@@ -25,14 +25,14 @@ export function Home() {
           </article>
           <article className="project-card">
             <h3>VFRplan</h3>
-            <p>Printable VFR flight planning tool for Sweden with route editor, RADIO/NAV autofill, and fuel, STOL and weight-and-balance calculations.</p>
+            <p>VFR flight planning tool for Sweden with route editor, RADIO/NAV autofill, and fuel, STOL and weight-and-balance calculations.</p>
             <a href="http://vfrplan.se" className="text-link" target="_blank" rel="noreferrer">
               Open project →
             </a>
           </article>
           <article className="project-card">
             <h3>Majkens spelhåla</h3>
-            <p>Two separate Bosse games in one portal: Bosse Hoppar and Bosse Vimsar, with a game picker on the first screen.</p>
+            <p>A small collection of web-based games gathered in one simple portal.</p>
             <a href="https://andreasmartensson.com/bosse-hoppar/" className="text-link" target="_blank" rel="noreferrer">
               Open project →
             </a>
