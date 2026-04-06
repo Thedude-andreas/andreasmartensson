@@ -68,6 +68,7 @@ The deploy script now:
 - resolves `DEPLOY_PATH` on the remote host before uploading
 - refuses unsafe targets such as `.` or `/`
 - expects the resolved path to be the live webroot, normally `../../webroots/www`
+- prefers `.deploy.env` over `.env` so deploy settings can be separated from other local config
 - uploads only the paths owned by AMC instead of mirroring the entire webroot
 - syncs the SPA shell from `dist/` and project-owned directories individually
 - syncs large static files directly from `public/` so unchanged APK/zip assets are less likely to be uploaded again just because `dist/` was rebuilt

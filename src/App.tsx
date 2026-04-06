@@ -3,6 +3,8 @@ import './App.css'
 import { Home } from './pages/Home'
 import { IssDashboard } from './pages/IssDashboard'
 
+const appVersion = __APP_VERSION__
+
 function App() {
   return (
     <BrowserRouter>
@@ -29,6 +31,7 @@ function App() {
         </main>
         <footer className="site-footer">
           <p>© {new Date().getFullYear()} Andreas Martensson · This is where obscure projects go to die.</p>
+          <p>Build {appVersion}</p>
         </footer>
       </div>
     </BrowserRouter>
