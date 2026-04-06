@@ -54,7 +54,7 @@ Example cron (runs every minute):
 ```
 
 ## Deploy Script (FTP/SFTP)
-Populate `.env` (see `.env.example`) and verify the target first:
+Populate `.deploy.env` (or fall back to `.env`) and verify the target first:
 ```bash
 npm run deploy:check
 ```

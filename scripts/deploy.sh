@@ -7,7 +7,12 @@ ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 cd "$ROOT_DIR"
 
-if [[ -f .env ]]; then
+if [[ -f .deploy.env ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  . ./.deploy.env
+  set +a
+elif [[ -f .env ]]; then
   set -a
   # shellcheck disable=SC1091
   . ./.env
