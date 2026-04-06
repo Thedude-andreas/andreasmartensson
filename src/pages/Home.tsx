@@ -24,9 +24,9 @@ export function Home() {
             </Link>
           </article>
           <article className="project-card">
-            <h3>Flightplan</h3>
-            <p>Printable flight planning tool for general aviation with route, fuel, STOL and weight-and-balance calculations.</p>
-            <a href="https://andreasmartensson.com/flightplan/" className="text-link" target="_blank" rel="noreferrer">
+            <h3>VFRplan</h3>
+            <p>Printable VFR flight planning tool for Sweden with route editor, RADIO/NAV autofill, and fuel, STOL and weight-and-balance calculations.</p>
+            <a href="http://vfrplan.se" className="text-link" target="_blank" rel="noreferrer">
               Open project →
             </a>
           </article>
