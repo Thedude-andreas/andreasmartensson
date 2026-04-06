@@ -54,11 +54,24 @@ Example cron (runs every minute):
 ```
 
 ## Deploy Script (FTP/SFTP)
-Populate `.env` (see `.env.example`) and run:
+Populate `.env` (see `.env.example`) and verify the target first:
+```bash
+npm run deploy:check
+```
+
+Then run:
 ```bash
 npm run deploy
 ```
-The script builds the project and syncs `dist/` to `public_html` over SFTP.
+
+The deploy script now:
+- resolves `DEPLOY_PATH` on the remote host before uploading
+- refuses unsafe targets such as `.` or `/`
+- expects the resolved path to be the live webroot, normally `../../webroots/www`
+- uploads only the paths owned by AMC instead of mirroring the entire webroot
+- syncs the SPA shell from `dist/` and project-owned directories individually
+- syncs large static files directly from `public/` so unchanged APK/zip assets are less likely to be uploaded again just because `dist/` was rebuilt
+- leaves unrelated sibling apps in the same webroot untouched, for example `bosse-hoppar`
 
 > Note: The `lightstreamer-client-web` package and Leaflet make the bundled JS file >700 kB. This is accepted given the real-time library, but can be code-split if needed (see Vite warning after build).
 
