@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sigge hoppar</title>
-    <script type="module" crossorigin src="/sigge-hoppar/assets/index-DxAuZHAf.js"></script>
-    <link rel="stylesheet" crossorigin href="/sigge-hoppar/assets/index-CHp55L8-.css">
+    <script type="module" crossorigin src="/sigge-hoppar/assets/index-BZRrfrow.js"></script>
+    <link rel="stylesheet" crossorigin href="/sigge-hoppar/assets/index-EQ3i1ErL.css">
   </head>
   <body>
     <div id="app">
       <div id="hud" aria-hidden="true">
         <p id="hud-title">Sigge hoppar</p>
-        <p id="hud-hint">Piltangenter: framåt / bakåt / sväng · mellanrum hoppar · WASD fungerar också</p>
+        <p id="hud-hint">Piltangenter/WASD eller touchkontroller · mellanrum hoppar</p>
         <p id="hud-rev" class="hud-rev">Kod: rod-basic+skutt+10</p>
         <div id="energy-wrap">
           <span>Energi (morötter)</span>
@@ -19,6 +19,15 @@
         </div>
         <p id="hud-fox" class="hud-fox--hidden">Räv! Spring till kaninburen…</p>
         <p id="hud-safe" class="hud-safe--hidden">Trygg i buren</p>
+      </div>
+      <div id="touch-controls" aria-label="Spelkontroller">
+        <div class="touch-pad" aria-label="Rörelse">
+          <button class="touch-btn touch-btn--up" data-key="ArrowUp" aria-label="Framåt">▲</button>
+          <button class="touch-btn touch-btn--left" data-key="ArrowLeft" aria-label="Sväng vänster">◀</button>
+          <button class="touch-btn touch-btn--down" data-key="ArrowDown" aria-label="Bakåt">▼</button>
+          <button class="touch-btn touch-btn--right" data-key="ArrowRight" aria-label="Sväng höger">▶</button>
+        </div>
+        <button class="touch-btn touch-btn--jump" data-key="Space" aria-label="Hoppa">Hopp</button>
       </div>
     </div>
   </body>
