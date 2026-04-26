@@ -38,6 +38,13 @@ export function Home() {
             </a>
           </article>
           <article className="project-card">
+            <h3>Sigge hoppar</h3>
+            <p>Three.js: dvärgväduren Sigge i trädgården, morötter, räv och en trygg kaninbur.</p>
+            <a href="/sigge-hoppar/" className="text-link">
+              Spela →
+            </a>
+          </article>
+          <article className="project-card">
             <h3>TempSense</h3>
             <p>Production dashboard for temperature, humidity and pressure sensors with secure ingest API.</p>
             <a

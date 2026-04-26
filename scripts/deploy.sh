@@ -116,6 +116,7 @@ cd "$DEPLOY_PATH"
 lcd "$ROOT_DIR"
 mirror -R --delete --verbose --scan-all-first public/AMCDM AMCDM
 mirror -R --delete --verbose --scan-all-first public/SlopeTrace SlopeTrace
+mirror -R --delete --verbose --scan-all-first public/sigge-hoppar sigge-hoppar
 mirror -R --delete --verbose --scan-all-first --exclude-glob storage --exclude-glob storage/* public/api api
 mirror -R --delete --verbose --scan-all-first dist/assets assets
 mirror -R --delete --verbose --scan-all-first public/vibe vibe
