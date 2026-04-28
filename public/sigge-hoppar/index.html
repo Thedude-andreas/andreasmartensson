@@ -9,8 +9,8 @@
     <meta name="apple-mobile-web-app-title" content="Sigge hoppar" />
     <link rel="manifest" href="manifest.webmanifest" />
     <title>Sigge hoppar</title>
-    <script type="module" crossorigin src="/sigge-hoppar/assets/index-CsIiazJT.js"></script>
-    <link rel="stylesheet" crossorigin href="/sigge-hoppar/assets/index-wgNfEC3R.css">
+    <script type="module" crossorigin src="/sigge-hoppar/assets/index-C_Ma8eTT.js"></script>
+    <link rel="stylesheet" crossorigin href="/sigge-hoppar/assets/index-B9bXRPmC.css">
   </head>
   <body>
     <div id="app">
@@ -27,8 +27,13 @@
         <p id="hud-gameover" class="hud-gameover--hidden">Game over</p>
       </div>
       <div id="touch-controls" aria-label="Spelkontroller">
-        <div id="jump-zone" class="touch-zone" aria-label="Hoppa"></div>
-        <div id="move-zone" class="touch-zone" aria-label="Rörelse"></div>
+        <div id="move-zone" class="touch-zone" aria-label="Rörelse">
+          <div id="move-stick" aria-hidden="true">
+            <div id="move-knob"></div>
+          </div>
+        </div>
+        <div id="camera-zone" class="touch-zone" aria-label="Kamera"></div>
+        <button id="jump-zone" class="touch-zone" type="button" aria-label="Hoppa">↑</button>
       </div>
       <div id="start-screen" class="mobile-overlay mobile-overlay--hidden">
         <div class="mobile-panel">
