@@ -124,8 +124,6 @@ mirror -R --delete --verbose --scan-all-first public/SlopeTrace SlopeTrace
 mirror -R --delete --verbose --scan-all-first public/sigge-hoppar sigge-hoppar
 chmod 755 sigge-hoppar
 chmod 755 sigge-hoppar/assets
-chmod 644 sigge-hoppar/index.html
-chmod 644 sigge-hoppar/assets/*
 mirror -R --delete --verbose --scan-all-first --exclude-glob storage --exclude-glob storage/* public/api api
 mirror -R --delete --verbose --scan-all-first dist/assets assets
 mirror -R --delete --verbose --scan-all-first public/vibe vibe
