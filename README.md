@@ -7,7 +7,7 @@ A tailored React/Vite app that visualizes selected telemetry signals from the In
 - **/iss** - ISS dashboard with map, telemetry tabs, and status indicators.
 - **/AMCDM/** - Static project page for AMC Download Manager (Android) with download for signed release APK.
 - **/SlopeTrace/** - Static project page for SlopeTrace (Android) with APK package download.
-- **/sigge-hoppar/** - Vite+Three web game (separate build from repo `Sigge_hoppar/`, output copied to `public/sigge-hoppar/`).
+- **/99-natter-pa-kronan/** - Vite+Three web game (separate build from repo `Sigge_hoppar/`, output copied to `public/99-natter-pa-kronan/`).
 
 React Router handles page transitions so the whole solution remains a static SPA that can be published on one.com.
 
@@ -73,7 +73,7 @@ The deploy script now:
 - uploads only the paths owned by AMC instead of mirroring the entire webroot
 - syncs the SPA shell from `dist/` and project-owned directories individually
 - syncs large static files directly from `public/` so unchanged APK/zip assets are less likely to be uploaded again just because `dist/` was rebuilt
-- leaves unrelated sibling apps in the same webroot untouched, for example `bosse-hoppar` (while `sigge-hoppar` is now mirrored from `public/sigge-hoppar/` in this repo)
+- leaves unrelated sibling apps in the same webroot untouched, for example `bosse-hoppar` (while `99-natter-pa-kronan` is mirrored from `public/99-natter-pa-kronan/` in this repo)
 
 > Note: The `lightstreamer-client-web` package and Leaflet make the bundled JS file >700 kB. This is accepted given the real-time library, but can be code-split if needed (see Vite warning after build).
 
@@ -95,7 +95,7 @@ src/
 public/
  |- api/                   - PHP endpoints + storage for ISS restroom data
  |- AMCDM/                 - static project page + APK/zip for AMC Download Manager
- '- sigge-hoppar/         - static build of the Three.js game (run `npm run build:amc` in `Sigge_hoppar/`)
+ '- 99-natter-pa-kronan/ - static build of the Three.js game (run `npm run build:amc` in `Sigge_hoppar/`)
 ```
 
 ## Next Improvements

@@ -38,9 +38,9 @@ export function Home() {
             </a>
           </article>
           <article className="project-card">
-            <h3>Sigge hoppar</h3>
-            <p>Three.js: dvärgväduren Sigge i trädgården, morötter, räv och en trygg kaninbur.</p>
-            <a href="/sigge-hoppar/" className="text-link">
+            <h3>99 nätter på kronan</h3>
+            <p>Three.js: Sigge överlever korta dygn, mörka nätter, morötter, räv, katt och skyddsföremål.</p>
+            <a href="/99-natter-pa-kronan/" className="text-link">
               Spela →
             </a>
           </article>
