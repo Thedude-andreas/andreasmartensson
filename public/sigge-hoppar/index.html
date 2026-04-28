@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sigge hoppar</title>
-    <script type="module" crossorigin src="/sigge-hoppar/assets/index-Dj1eDgMq.js"></script>
-    <link rel="stylesheet" crossorigin href="/sigge-hoppar/assets/index-BukxUMM4.css">
+    <script type="module" crossorigin src="/sigge-hoppar/assets/index-KTNlZPfD.js"></script>
+    <link rel="stylesheet" crossorigin href="/sigge-hoppar/assets/index-DMDk4DMn.css">
   </head>
   <body>
     <div id="app">
@@ -29,6 +29,13 @@
           <button class="touch-btn touch-btn--right" data-key="ArrowRight" aria-label="Sväng höger">▶</button>
         </div>
         <button class="touch-btn touch-btn--jump" data-key="Space" aria-label="Hoppa">Hopp</button>
+      </div>
+      <div id="gameover-dialog" class="gameover-dialog--hidden" role="dialog" aria-modal="true" aria-labelledby="gameover-title">
+        <div class="gameover-panel">
+          <p id="gameover-title">Game over</p>
+          <p>Sigge behöver mer energi.</p>
+          <button id="restart-game" type="button">Starta om</button>
+        </div>
       </div>
     </div>
   </body>
