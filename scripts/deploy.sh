@@ -105,6 +105,11 @@ fi
 
 npm run build
 
+if [[ -d public/sigge-hoppar ]]; then
+  find public/sigge-hoppar -type d -exec chmod 755 {} +
+  find public/sigge-hoppar -type f -exec chmod 644 {} +
+fi
+
 run_lftp_script <<EOF
 set cmd:fail-exit yes
 set sftp:auto-confirm yes
@@ -117,6 +122,10 @@ lcd "$ROOT_DIR"
 mirror -R --delete --verbose --scan-all-first public/AMCDM AMCDM
 mirror -R --delete --verbose --scan-all-first public/SlopeTrace SlopeTrace
 mirror -R --delete --verbose --scan-all-first public/sigge-hoppar sigge-hoppar
+chmod 755 sigge-hoppar
+chmod 755 sigge-hoppar/assets
+chmod 644 sigge-hoppar/index.html
+chmod 644 sigge-hoppar/assets/*
 mirror -R --delete --verbose --scan-all-first --exclude-glob storage --exclude-glob storage/* public/api api
 mirror -R --delete --verbose --scan-all-first dist/assets assets
 mirror -R --delete --verbose --scan-all-first public/vibe vibe
