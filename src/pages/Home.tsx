@@ -57,6 +57,18 @@ export function Home() {
             </a>
           </article>
           <article className="project-card">
+            <h3>Tidlapp</h3>
+            <p>Proof of concept for BEAst delivery note import, resource control, approval and estimate variance follow-up.</p>
+            <a
+              href="https://tidlapp.andreasmartensson.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-link"
+            >
+              Open Tidlapp →
+            </a>
+          </article>
+          <article className="project-card">
             <h3>AMC Download Manager</h3>
             <p>Android app for fast access to recent files in Downloads, built for one-tap document reopening.</p>
             <a href="/AMCDM/" className="text-link">
