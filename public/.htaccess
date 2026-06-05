@@ -12,6 +12,10 @@
   RewriteEngine On
   RewriteBase /
 
+  # Force HTTP traffic over HTTPS before handling files or SPA routes.
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
   # Never rewrite the actual index.html file
   RewriteRule ^index\.html$ - [L]
 
