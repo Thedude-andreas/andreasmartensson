@@ -31,6 +31,13 @@ export function Home() {
             </a>
           </article>
           <article className="project-card">
+            <h3>VP-sim</h3>
+            <p>Web-based variable prop procedure simulator for PPL seaplane training, with engine controls, instruments and RPM-driven audio.</p>
+            <a href="https://vp-sim.andreasmartensson.com" className="text-link" target="_blank" rel="noreferrer">
+              Open simulator →
+            </a>
+          </article>
+          <article className="project-card">
             <h3>Majkens spelhåla</h3>
             <p>A small collection of web-based games gathered in one simple portal.</p>
             <a href="https://andreasmartensson.com/bosse-hoppar/" className="text-link" target="_blank" rel="noreferrer">
