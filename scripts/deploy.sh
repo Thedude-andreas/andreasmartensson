@@ -125,7 +125,6 @@ mirror -R --delete --verbose --scan-all-first public/99-natter-pa-kronan 99-natt
 chmod 755 99-natter-pa-kronan
 chmod 755 99-natter-pa-kronan/assets
 rm -rf sigge-hoppar
-mirror -R --delete --verbose --scan-all-first --exclude-glob storage --exclude-glob storage/* public/api api
 mirror -R --delete --verbose --scan-all-first dist/assets assets
 mirror -R --delete --verbose --scan-all-first public/vibe vibe
 put -O . dist/index.html

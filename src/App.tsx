@@ -1,40 +1,33 @@
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { Home } from './pages/Home'
-import { IssDashboard } from './pages/IssDashboard'
 
 const appVersion = __APP_VERSION__
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="site-shell">
-        <header className="site-nav">
-          <NavLink to="/" className="logo">
-            andreasmartensson.com
-          </NavLink>
-          <nav>
-            <NavLink to="/" end>
-              Home
-            </NavLink>
-            <NavLink to="/iss">ISS Dashboard</NavLink>
-            <a href="https://tempsense.andreasmartensson.com" target="_blank" rel="noreferrer">
-              Tempsense
-            </a>
-          </nav>
-        </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/iss" element={<IssDashboard />} />
-          </Routes>
-        </main>
-        <footer className="site-footer">
-          <p>© {new Date().getFullYear()} Andreas Martensson · This is where obscure projects go to die.</p>
-          <p>Build {appVersion}</p>
-        </footer>
-      </div>
-    </BrowserRouter>
+    <div className="site-shell">
+      <header className="site-nav">
+        <a href="/" className="logo">
+          andreasmartensson.com
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="https://iss.andreasmartensson.com" target="_blank" rel="noreferrer">
+            ISS Dashboard
+          </a>
+          <a href="https://tempsense.andreasmartensson.com" target="_blank" rel="noreferrer">
+            Tempsense
+          </a>
+        </nav>
+      </header>
+      <main>
+        <Home />
+      </main>
+      <footer className="site-footer">
+        <p>© {new Date().getFullYear()} Andreas Martensson · This is where obscure projects go to die.</p>
+        <p>Build {appVersion}</p>
+      </footer>
+    </div>
   )
 }
 

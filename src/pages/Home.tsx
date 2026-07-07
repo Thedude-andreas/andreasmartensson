@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 export function Home() {
   return (
     <div className="home">
@@ -19,9 +17,9 @@ export function Home() {
           <article className="project-card">
             <h3>ISS Live Dashboard</h3>
             <p>Real-time telemetry from NASA ISSLive! + Lightstreamer, complete with map and life-support vitals.</p>
-            <Link to="/iss" className="text-link">
+            <a href="https://iss.andreasmartensson.com" className="text-link" target="_blank" rel="noreferrer">
               Visit dashboard →
-            </Link>
+            </a>
           </article>
           <article className="project-card">
             <h3>VFRplan</h3>
