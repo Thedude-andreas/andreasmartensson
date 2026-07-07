@@ -36,5 +36,16 @@ jobs:
           cd webroots
           pwd
           cls -la
+          cd www
+          pwd
+          cls -la
+          cd ..
+          cd 37f82493
+          pwd
+          cls -la
+          cd ..
+          cd 9ff147c4
+          pwd
+          cls -la
           bye
           EOF
