@@ -75,9 +75,9 @@ export function Home() {
           </article>
           <article className="project-card">
             <h3>AMC Download Manager</h3>
-            <p>Android app for fast access to recent files in Downloads, built for one-tap document reopening.</p>
+            <p>Android beta for reopening the latest download with one tap, plus focused sharing, rename and delete tools.</p>
             <a href="/AMCDM/" className="text-link">
-              Open project page →
+              Download beta →
             </a>
           </article>
           <article className="project-card">

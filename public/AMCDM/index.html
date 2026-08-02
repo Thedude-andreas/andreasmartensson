@@ -1,30 +1,29 @@
 <!doctype html>
-<html lang="sv">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AMCDM – Android</title>
+    <meta name="description" content="Download AMC Download Manager for Android and join the real-world beta test." />
+    <title>AMC Download Manager – Android beta</title>
     <style>
       :root {
-        --bg: #0b1020;
-        --card: #121936;
-        --muted: #b6c3e5;
-        --text: #ecf1ff;
-        --accent: #f97316;
-        --accent-2: #e35d0a;
-        --line: rgba(255, 255, 255, 0.14);
+        --bg: #101318;
+        --card: #191d24;
+        --muted: #aeb5c0;
+        --text: #e7eaf0;
+        --accent: #f38b3c;
+        --accent-2: #d96f23;
+        --line: #39414d;
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-        background: radial-gradient(circle at top right, #1b2d5c 0%, var(--bg) 46%);
+        background: radial-gradient(circle at top right, #252b35 0%, var(--bg) 42%);
         color: var(--text);
       }
-      .site-header {
-        border-bottom: 1px solid var(--line);
-        margin-bottom: 1.5rem;
-      }
+      a { color: var(--accent); }
+      .site-header { border-bottom: 1px solid var(--line); }
       .site-nav {
         width: min(920px, 100% - 2rem);
         margin: 0 auto;
@@ -34,53 +33,59 @@
         align-items: center;
         gap: 1rem;
       }
-      .logo {
-        color: var(--text);
-        text-decoration: none;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .site-nav nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 0.8rem;
-      }
-      .site-nav nav a {
-        color: var(--muted);
-        text-decoration: none;
-      }
-      .site-nav nav a.active {
-        color: var(--accent);
-      }
+      .logo { color: var(--text); text-decoration: none; font-weight: 650; letter-spacing: 0.06em; }
+      .site-nav nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+      .site-nav nav a { color: var(--muted); text-decoration: none; }
       .wrap { width: min(920px, 100% - 2rem); margin: 2rem auto 3rem; }
       .hero, .panel {
-        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
         border: 1px solid var(--line);
         border-radius: 18px;
-        padding: 1.25rem;
+        padding: clamp(1.25rem, 4vw, 2rem);
       }
-      .hero h1 { margin: 0.35rem 0 0.75rem; font-size: clamp(1.7rem, 4vw, 2.5rem); }
-      .eyebrow { margin: 0; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem; }
-      .lead { margin: 0; color: var(--muted); max-width: 70ch; line-height: 1.55; }
+      .hero-heading { display: flex; align-items: center; gap: 1rem; }
+      .app-mark {
+        flex: 0 0 auto;
+        width: 72px;
+        height: 72px;
+        display: grid;
+        place-items: center;
+        border-radius: 18px;
+        background: #1b2d5c;
+        color: var(--accent);
+      }
+      .app-mark svg { width: 44px; height: 44px; }
+      h1 { margin: 0.25rem 0 0.65rem; font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.05; }
+      .eyebrow { margin: 0; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; }
+      .lead { margin: 0; color: var(--muted); max-width: 68ch; line-height: 1.6; }
+      .release { display: inline-flex; margin-top: 1rem; padding: 0.35rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 0.9rem; }
       .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
       .panel h2 { margin: 0 0 0.8rem; font-size: 1.2rem; }
-      ul { margin: 0; padding-left: 1rem; color: var(--muted); line-height: 1.7; }
+      ul, ol { margin: 0; padding-left: 1.2rem; color: var(--muted); line-height: 1.75; }
       .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
       .btn {
-        display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
-        padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid transparent;
-        color: #fff; text-decoration: none; font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0.8rem 1.1rem;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        color: #241100;
+        text-decoration: none;
+        font-weight: 750;
       }
-      .btn.primary { background: linear-gradient(180deg, var(--accent), var(--accent-2)); border-color: rgba(255,255,255,0.22); }
-      .btn.secondary { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
-      .meta { margin-top: 1rem; color: var(--muted); font-size: 0.93rem; }
-      .back { margin-top: 1.25rem; }
-      .back a { color: #9fd0ff; }
+      .btn.primary { background: linear-gradient(180deg, var(--accent), var(--accent-2)); }
+      .btn.secondary { color: var(--text); background: rgba(255,255,255,0.04); border-color: var(--line); }
+      .notice { margin-top: 1rem; padding: 0.9rem 1rem; border-left: 3px solid var(--accent); background: rgba(243,139,60,0.08); color: var(--muted); line-height: 1.55; }
+      .meta { margin-top: 1rem; color: var(--muted); font-size: 0.93rem; line-height: 1.55; }
+      .meta code { overflow-wrap: anywhere; word-break: break-all; }
+      .footer-links { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; }
       @media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } }
-      @media (max-width: 760px) {
-        .site-nav { flex-direction: column; align-items: flex-start; }
+      @media (max-width: 600px) {
+        .site-nav { align-items: flex-start; flex-direction: column; }
+        .hero-heading { align-items: flex-start; }
+        .app-mark { width: 60px; height: 60px; border-radius: 15px; }
       }
     </style>
   </head>
@@ -88,51 +93,66 @@
     <header class="site-header">
       <div class="site-nav">
         <a class="logo" href="/">andreasmartensson.com</a>
-        <nav>
+        <nav aria-label="Project navigation">
           <a href="/">Home</a>
-          <a href="/iss">ISS Dashboard</a>
-          <a href="https://tempsense.andreasmartensson.com" target="_blank" rel="noreferrer">Tempsense</a>
+          <a href="https://github.com/Thedude-andreas/AMC-Download-Manager">Source code</a>
+          <a href="./privacy/">Privacy</a>
         </nav>
       </div>
     </header>
-    <div class="wrap">
+
+    <main class="wrap">
       <section class="hero">
-        <p class="eyebrow">andreasmartensson.com / AMCDM</p>
-        <h1>AMC Download Manager (Android)</h1>
-        <p class="lead">
-          Simple Android app for quickly opening the latest files. Default folder is Downloads, with support for adding more folders through a minimal folder picker.
-        </p>
+        <div class="hero-heading">
+          <div class="app-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zm14-11h-4V3H9v6H5l7 7 7-7z"/></svg>
+          </div>
+          <div>
+            <p class="eyebrow">Android beta</p>
+            <h1>AMC Download Manager</h1>
+          </div>
+        </div>
+        <p class="lead">Open your most recent download with one tap. AMC Download Manager keeps the latest file within easy thumb reach and adds focused tools for sharing, renaming, and deleting downloaded files.</p>
+        <span class="release">Version 1.1.0-beta.1 · Android 8.0 or newer</span>
       </section>
 
       <div class="grid">
         <section class="panel">
-          <h2>Purpose</h2>
+          <h2>What to test</h2>
           <ul>
-            <li>Open the most recently downloaded file with one tap.</li>
-            <li>Avoid manually searching the filesystem for documents you already downloaded.</li>
-            <li>Keep a simple interface without unnecessary menus.</li>
+            <li>Grant file access and confirm Downloads appears.</li>
+            <li>Open the newest file using the orange action.</li>
+            <li>Open, share, rename, and delete files from the list.</li>
+            <li>Add and remove an extra folder.</li>
+            <li>Try different file types and a folder with many files.</li>
           </ul>
         </section>
 
         <section class="panel">
-          <h2>Features</h2>
+          <h2>Privacy by design</h2>
           <ul>
-            <li>Starts in <strong>Downloads</strong> by default.</li>
-            <li>Supports extra folders via a simple button: <strong>Folders</strong>.</li>
-            <li>Merged file list sorted with newest first.</li>
-            <li>Large thumb-friendly button to open the newest file directly.</li>
+            <li>No account, ads, analytics, or remote data collection.</li>
+            <li>File information is processed locally on the device.</li>
+            <li>Files are shared only when you explicitly choose Share.</li>
+            <li>File access can be revoked in Android settings at any time.</li>
           </ul>
         </section>
       </div>
 
       <section class="panel" style="margin-top: 1rem;">
-        <h2>Download</h2>
+        <h2>Download the beta</h2>
         <div class="actions">
-          <a class="btn primary" href="./AMCDM-release-package.zip">Download APK package (zip)</a>
+          <a class="btn primary" href="./AMCDM-release.apk" download>Download APK</a>
+          <a class="btn secondary" href="./AMCDM-release-package.zip" download>Download ZIP package</a>
         </div>
-        <p class="meta">The ZIP package contains a signed release APK (AMCDM-release.apk).</p>
-        <p class="back"><a href="/">← Back to home</a></p>
+        <p class="notice"><strong>Android installation:</strong> Your browser may ask for permission to install apps from this source. Android will also warn that this is an app from outside Google Play. These prompts are expected for this private beta.</p>
+        <p class="meta">The APK is signed by Andreas Mårtensson. SHA-256: <code>812e7e28590c656fbf555e9be2282c9abcf8f4003f2b57075e9dd7c3b58f8da1</code></p>
+        <div class="footer-links">
+          <a href="./privacy/">Privacy policy</a>
+          <a href="mailto:andreas@andreasmartensson.com?subject=AMC%20Download%20Manager%20beta">Send beta feedback</a>
+          <a href="https://github.com/Thedude-andreas/AMC-Download-Manager">View source</a>
+        </div>
       </section>
-    </div>
+    </main>
   </body>
 </html>
