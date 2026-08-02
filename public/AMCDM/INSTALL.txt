@@ -1,0 +1,15 @@
+AMC Download Manager 1.1.0-beta.1
+
+1. Copy AMCDM-release.apk to your Android device or download it directly.
+2. Open the APK from your browser or Files app.
+3. If Android asks, allow installation from that source for this installation.
+4. Open AMC Download Manager and read the file-access explanation.
+5. Continue to Android settings and allow file access.
+
+The app requires Android 8.0 or newer.
+
+Privacy policy:
+https://andreasmartensson.com/AMCDM/privacy/
+
+Feedback:
+andreas@andreasmartensson.com
